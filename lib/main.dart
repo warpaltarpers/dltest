@@ -4,18 +4,15 @@ import 'dart:async';
 import 'package:uni_links/uni_links.dart';
 import 'package:flutter/services.dart' show PlatformException;
 
-
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => TestApp(),
-        '/second': (context) => SecondScreen(),
-      },
-    )
-  );
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: '/',
+    routes: {
+      '/': (context) => TestApp(),
+      '/second': (context) => SecondScreen(),
+    },
+  ));
 }
 
 class TestApp extends StatefulWidget {
@@ -48,7 +45,7 @@ class _TestAppState extends State<TestApp> {
   initPlatformState() async {
     await initPlatformStateForUriUniLinks();
   }
-  
+
   // An implementation using the [Uri] convenience helpers
   initPlatformStateForUriUniLinks() async {
     // Attach a listener to the Uri links stream
@@ -100,7 +97,7 @@ class _TestAppState extends State<TestApp> {
       _latestLink = initialLink;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,15 +105,12 @@ class _TestAppState extends State<TestApp> {
         title: Text('Deep Link Test'),
       ),
       body: Center(
-        child: Text(
-          'This is the main screen of the app',
-          style: TextStyle(fontSize: 20.0)
-        ),
+        child: Text('This is the main screen of the app',
+            style: TextStyle(fontSize: 20.0)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(
-            context, '/second');
+          Navigator.pushNamed(context, '/second');
         },
         child: Icon(Icons.arrow_forward),
       ),
