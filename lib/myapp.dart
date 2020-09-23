@@ -7,6 +7,19 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: Text('Deep Link Test'),
       ),
+      body: Center(
+        child: Text(
+          'This is the main screen of the app',
+          style: TextStyle(fontSize: 20.0)
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(
+            context, '/second');
+        },
+        child: Icon(Icons.arrow_forward),
+      ),
     );
   }
 }
