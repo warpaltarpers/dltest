@@ -24,10 +24,10 @@ enum UniLinksType { string, uri }
 
 class _TestAppState extends State<TestApp> {
   StreamSubscription _sub;
-  UniLinksType _type = UniLinksType.string;
+  // ignore: unused_field
   String _latestLink = 'Unknown';
+  // ignore: unused_field
   Uri _latestUri;
-  final _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   initState() {
